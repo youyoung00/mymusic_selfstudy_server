@@ -171,7 +171,7 @@ var datas = [
           "artist":"선미",
           "jacket":"https://images.unsplash.com/photo-1620416264544-5866b5c5c931?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0N3x8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60",
           "lyrics":"댄스가사2"
-        }
+        } 
       ]
     },
     {
@@ -222,4 +222,14 @@ app.get('/datas/', (req,res) => {
 app.get('/data/:id', (req,res) => {
     var id = req.params.id;
     res.json( datas[id] );
+});
+
+
+// /data/0/0 -> 댄스 노래 1
+// /data/0/1 -> 댄스 노래 2
+// 단위개발 테스트 = 라우터를 만들고 일어날 수 있는 오류를 테스트해본다.
+app.get('/data/:id/:targetId', (req,res) => {
+  var id = req.params.id;
+  var targetId = req.params.targetId;
+  res.json(datas[id].datas[targetId]);
 });
