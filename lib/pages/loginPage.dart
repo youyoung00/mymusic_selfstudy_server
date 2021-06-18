@@ -23,7 +23,9 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text("good"),
+      ),
       body: SingleChildScrollView(
         // controller: ,
         physics: NeverScrollableScrollPhysics(),
